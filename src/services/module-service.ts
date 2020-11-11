@@ -5,8 +5,11 @@ export class ModuleService {
     findModulesForCourse = (course) =>
         fetch(`https://wbdv-generic-server.herokuapp.com/api/juat/courses/${course._id}/modules`)
             .then(response => response.json())
-    createModuleForCourse = (course) =>
-        fetch(`https://wbdv-generic-server.herokuapp.com/api/juat/courses/${course._id}/modules`, {
+    findModulesByCourseId = (courseId) =>
+        fetch(`https://wbdv-generic-server.herokuapp.com/api/juat/courses/${courseId}/modules`)
+            .then(response => response.json())
+    createModuleForCourse = (courseId) =>
+        fetch(`https://wbdv-generic-server.herokuapp.com/api/juat/courses/${courseId}/modules`, {
             method: 'POST',
             body: JSON.stringify({ title: "New Module" }),
             headers: {

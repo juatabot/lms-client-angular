@@ -1,13 +1,15 @@
 <div class="container">
     <h1>Course Navigator</h1>
     <div class="row">
-        <div class="col-6">
+        <div class="col-4">
             <ul class="list-group">
                 <li class="list-group-item active">Courses</li>
                 <li class="list-group-item" (click)="selectCourse(course)"
                     [ngClass]="{'list-group-item-dark': course === selectedCourse}" *ngFor="let course of courses">
                     <span [hidden]="course.editing">
-                        {{course.title}}
+                        <a routerLink="/courses/{{course._id}}/modules" routerLinkActive="active">
+                            {{course.title}}
+                        </a>
                         <button class="btn btn-primary" (click)="editing(course)">
                             Edit
                         </button>
@@ -27,19 +29,10 @@
                 </button>
             </ul>
         </div>
-        <div class="col-6">
-            <ul class="list-group">
-                <li class="list-group-item active">Modules</li>
-                <li class="list-group-item" *ngFor="let module of modules">
-                    {{module.title}}
-                    <button class="btn btn-primary" (click)="deleteModule(module)">
-                        Delete
-                    </button>
-                </li>
-                <button class="btn btn-primary" (click)="createModuleForCourse(selectedCourse)">
-                    Create Module
-                </button>
-            </ul>
+        <div class="col-8">
+            <app-module-list></app-module-list>
         </div>
     </div>
 </div>
+
+<router-outlet></router-outlet>

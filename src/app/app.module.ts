@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { CourseService } from 'src/services/course-service';
 import { ModuleService } from 'src/services/module-service';
+import { ModuleListComponent } from './module-list/module-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseNavigatorComponent
+    CourseNavigatorComponent,
+    ModuleListComponent,
   ],
   imports: [
     BrowserModule,

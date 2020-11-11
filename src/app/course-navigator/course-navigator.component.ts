@@ -62,16 +62,6 @@ export class CourseNavigatorComponent implements OnInit {
     this.courseService.updateCourse(course);
   }
 
-  createModuleForCourse(course): void {
-    this.moduleService.createModuleForCourse(course)
-      .then(actualModule => this.modules.push(actualModule));
-  }
-
-  deleteModule(module): void {
-    this.moduleService.deleteModule(module)
-      .then(status => this.modules = this.modules.filter(m => m !== module));
-  }
-
   ngOnInit(): void {
     this.courseService.fetchAllCourses()
       .then(c => this.courses = c);
