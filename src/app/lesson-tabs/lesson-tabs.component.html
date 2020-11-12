@@ -1,8 +1,11 @@
 <ul class="nav nav-tabs">
-    <li class="nav-item" *ngFor="let lesson of lessons">
-        <a class="nav-link">{{lesson.title}}</a>
+    <li class="nav-item" *ngFor="let lesson of lessons" (click)="selectLesson(lesson._id)"
+        [ngClass]="{'list-group-item-dark': lesson._id === this.selectedLesson}">
+        <a class="nav-link" routerLink="/courses/{{courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}/topics">
+            {{lesson.title}}
+        </a>
     </li>
-    <button class="btn btn-primary" (click)="createLessonForModule(this.moduleId)">
+    <button class=" btn btn-primary" (click)="createLessonForModule(this.moduleId)">
         Create Lesson
     </button>
 </ul>

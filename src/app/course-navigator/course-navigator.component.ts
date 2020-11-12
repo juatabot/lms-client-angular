@@ -10,23 +10,7 @@ import { ModuleService } from 'src/services/module-service';
 })
 export class CourseNavigatorComponent implements OnInit {
 
-  courses = [
-    {
-      id: "1",
-      title: "Course 1",
-      editing: false,
-    },
-    {
-      id: "2",
-      title: "Course 2",
-      editing: false,
-    },
-    {
-      id: "1",
-      title: "Course 3",
-      editing: false,
-    }
-  ];
+  courses = [];
 
   courseId = '';
 
