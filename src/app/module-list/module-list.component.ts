@@ -17,7 +17,6 @@ export class ModuleListComponent implements OnInit {
   lessons = []
 
   constructor(
-    private lessonService: LessonService,
     private moduleService: ModuleService,
     private activatedRoute: ActivatedRoute
   ) { }

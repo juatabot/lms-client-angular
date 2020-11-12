@@ -36,7 +36,6 @@ export class CourseNavigatorComponent implements OnInit {
 
   constructor(
     private courseService: CourseService,
-    private moduleService: ModuleService,
     private activatedRoute: ActivatedRoute
   ) { }
 

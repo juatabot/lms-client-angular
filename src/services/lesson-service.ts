@@ -6,7 +6,7 @@ export class LessonService {
         fetch(`https://wbdv-generic-server.herokuapp.com/api/juat/modules/${moduleId}/lessons`)
             .then(response => response.json())
     createLessonForModule = (moduleId) =>
-        fetch('https://wbdv-generic-server.herokuapp.com/api/juat/modules/${moduleId}/lessons', {
+        fetch(`https://wbdv-generic-server.herokuapp.com/api/juat/modules/${moduleId}/lessons`, {
             method: 'POST',
             body: JSON.stringify({ title: "New Lesson" }),
             headers: {
