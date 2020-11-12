@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let lesson of lessons">
+        <a class="nav-link">{{lesson.title}}</a>
+    </li>
+    <button class="btn btn-primary" (click)="createLessonForModule(this.moduleId)">
+        Create Lesson
+    </button>
+</ul>

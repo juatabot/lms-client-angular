@@ -1,11 +1,12 @@
 <div class="container">
     <h1>Course Navigator - {{this.courseId}}</h1>
     <div class="row">
-        <div class="col-4">
+        <div class="col-3">
             <ul class="list-group">
                 <li class="list-group-item active">Courses</li>
                 <li class="list-group-item" (click)="selectCourse(course._id)"
-                    [ngClass]="{'list-group-item-dark': course._id === courseId}" *ngFor="let course of courses">
+                    [ngClass]="{'list-group-item-dark': course._id === courseId}"
+                    *ngFor="let course of courses">
                     <span [hidden]="course.editing">
                         <a routerLink="/courses/{{course._id}}/modules" routerLinkActive="active">
                             {{course.title}}
@@ -29,8 +30,15 @@
                 </button>
             </ul>
         </div>
-        <div class="col-8">
-            <app-module-list></app-module-list>
+        <div class="col-9">
+            <div class="row">
+                <div class="col-4">
+                    <app-module-list></app-module-list>
+                </div>
+                <div class="col-8">
+                    <app-lesson-tabs></app-lesson-tabs>
+                </div>
+            </div>
         </div>
     </div>
 </div>

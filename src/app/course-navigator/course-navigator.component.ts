@@ -53,8 +53,6 @@ export class CourseNavigatorComponent implements OnInit {
 
   selectCourse(courseId): void {
     this.selectedCourse = courseId;
-    this.moduleService.findModulesByCourseId(courseId)
-      .then(modules => this.modules = modules);
   }
 
   editing(course): void {
