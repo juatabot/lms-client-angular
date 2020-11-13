@@ -26,6 +26,7 @@ export class LessonTabsComponent implements OnInit {
   }
 
   selectLesson(lessonId): void {
+    console.log(lessonId);
     this.selectedLesson = lessonId;
   }
 
@@ -41,6 +42,11 @@ export class LessonTabsComponent implements OnInit {
           .then(lessons => this.lessons = lessons);
       }
 
+      const lessonId = params.lessonId;
+      if (typeof lessonId !== 'undefined') {
+        this.selectedLesson = lessonId;
+
+      }
     });
   }
 

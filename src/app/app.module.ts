@@ -9,6 +9,7 @@ import { ModuleService } from 'src/services/module-service';
 import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import { LessonService } from 'src/services/lesson-service';
+import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LessonService } from 'src/services/lesson-service';
     CourseNavigatorComponent,
     ModuleListComponent,
     LessonTabsComponent,
+    CourseViewerComponent,
   ],
   imports: [
     BrowserModule,
