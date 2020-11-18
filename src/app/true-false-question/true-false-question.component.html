@@ -2,25 +2,21 @@
     [ngClass]="{'list-group-item-danger': question.answer !== userAnswer && this.grading}">
     {{this.question.question}}
     <div class="row">
-        <div [hidden]="this.grading">
-            <div class="col-1">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="true_false" id="true" value="true"
-                        (click)="changeAnswer($event)">
-                    <label class="form-check-label" for="true">True</label>
-                </div>
+        <div class="col-2" [hidden]="this.grading">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="true_false" id="true" value="true"
+                    (click)="changeAnswer($event)">
+                <label class="form-check-label" for="true">True</label>
             </div>
-            <div class="col-1">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="true_false" id="false" value="false"
-                        (click)="changeAnswer($event)">
-                    <label class="form-check-label" for="false">False</label>
-                </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="true_false" id="false" value="false"
+                    (click)="changeAnswer($event)">
+                <label class="form-check-label" for="false">False</label>
             </div>
+            <button class="btn btn-primary" (click)="grade()" [hidden]="this.grading">
+                Grade
+            </button>
         </div>
-        <button class="btn btn-primary" (click)="grade()" [hidden]="this.grading">
-            Grade
-        </button>
         <div class="col-10" [hidden]="!this.grading">
             <span [hidden]="question.answer !== userAnswer">
                 Correct!

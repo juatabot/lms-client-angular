@@ -10,11 +10,11 @@
                     <label class="form-check-label" for="true">{{option}}</label>
                 </div>
             </ul>
+            <button class="btn btn-primary" (click)="grade()" [hidden]="this.grading">
+                Grade
+            </button>
         </div>
-        <button class="btn btn-primary" (click)="grade()" [hidden]="this.grading">
-            Grade
-        </button>
-        <div class="col-7" [hidden]="!this.grading">
+        <div class="col-8" [hidden]="!this.grading">
             <span [hidden]="question.answer !== userAnswer">
                 Correct! Answer: {{question.answer}}
             </span>
