@@ -17,7 +17,7 @@
                 Grade
             </button>
         </div>
-        <div class="col-10" [hidden]="!this.grading">
+        <div [hidden]="!this.grading">
             <span [hidden]="question.answer !== userAnswer">
                 Correct!
                 Answer: {{question.answer}}
