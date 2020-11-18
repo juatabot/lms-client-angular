@@ -18,7 +18,9 @@ export class TrueFalseQuestionComponent implements OnInit {
   constructor() { }
 
   changeAnswer(e): void {
-    this.userAnswer = e.target.value;
+    if (!this.grading) {
+      this.userAnswer = e.target.value;
+    }
   }
 
   grade(): void {

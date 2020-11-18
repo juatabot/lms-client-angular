@@ -2,27 +2,34 @@
     [ngClass]="{'list-group-item-danger': question.answer !== userAnswer && this.grading}">
     {{this.question.question}}
     <div class="row">
-        <div class="col-1">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="true_false" id="true" value="true"
-                    (click)="changeAnswer($event)">
-                <label class="form-check-label" for="true">True</label>
+        <div [hidden]="this.grading">
+            <div class="col-1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="true_false" id="true" value="true"
+                        (click)="changeAnswer($event)">
+                    <label class="form-check-label" for="true">True</label>
+                </div>
             </div>
-        </div>
-        <div class="col-1">
-            <input class="form-check-input" type="radio" name="true_false" id="false" value="false"
-                (click)="changeAnswer($event)">
-            <label class="form-check-label" for="false">False</label>
+            <div class="col-1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="true_false" id="false" value="false"
+                        (click)="changeAnswer($event)">
+                    <label class="form-check-label" for="false">False</label>
+                </div>
+            </div>
         </div>
         <button class="btn btn-primary" (click)="grade()" [hidden]="this.grading">
             Grade
         </button>
-        <div class="col-2" [hidden]="!this.grading">
+        <div class="col-10" [hidden]="!this.grading">
             <span [hidden]="question.answer !== userAnswer">
                 Correct!
+                Answer: {{question.answer}}
             </span>
             <span [hidden]="question.answer === userAnswer">
                 Incorrect!
+                Answer: {{question.answer}}
+                Your Answer: {{this.userAnswer}}
             </span>
         </div>
 
