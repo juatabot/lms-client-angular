@@ -6,13 +6,18 @@
                 <li class="list-group-item active">Questions</li>
                 <li class="list-group-item" *ngFor="let question of questions">
                     <div [ngSwitch]="question.type">
-                        <app-multiple-choice-question [question]="question" *ngSwitchCase="'MULTIPLE_CHOICE'">
+                        <app-multiple-choice-question [question]="question" [(answer)]="answer"
+                            *ngSwitchCase="'MULTIPLE_CHOICE'">
                         </app-multiple-choice-question>
-                        <app-true-false-question [question]="question" *ngSwitchCase="'TRUE_FALSE'">
+                        <app-true-false-question [question]="question" [(answer)]="answer"
+                            *ngSwitchCase="'TRUE_FALSE'">
                         </app-true-false-question>
                     </div>
                 </li>
             </ul>
+            <button class="btn btn-primary" (click)="submitQuiz()">
+                Submit Quiz
+            </button>
         </div>
     </div>
 </div>

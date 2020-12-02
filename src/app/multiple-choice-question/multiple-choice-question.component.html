@@ -1,5 +1,5 @@
-<div class="container" [ngClass]="{'list-group-item-success': question.correct === userAnswer && this.grading}"
-    [ngClass]="{'list-group-item-danger': question.correct !== userAnswer && this.grading}">
+<div class="container" [ngClass]="{'list-group-item-success': question.correct === answer && this.grading}"
+    [ngClass]="{'list-group-item-danger': question.correct !== answer && this.grading}">
     {{this.question.question}}
     <div class="row">
         <div class="col-2" [hidden]="this.grading">
@@ -15,11 +15,11 @@
             </button>
         </div>
         <div class="col-8" [hidden]="!this.grading">
-            <span [hidden]="question.correct !== userAnswer">
+            <span [hidden]="question.correct !== answer">
                 Correct! Answer: {{question.correct}}
             </span>
-            <span [hidden]="question.correct === userAnswer">
-                Incorrect! Answer: {{question.correct}} Your Answer: {{this.userAnswer}}
+            <span [hidden]="question.correct === answer">
+                Incorrect! Answer: {{question.correct}} Your Answer: {{this.answer}}
             </span>
         </div>
     </div>
