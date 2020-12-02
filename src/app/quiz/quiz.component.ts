@@ -23,6 +23,7 @@ export class QuizComponent implements OnInit {
         this.quizId = params.quizId;
         this.questionService.findAllQuestionsForQuiz(this.quizId)
           .then(questions => this.questions = questions);
+          // .then(questions => console.log(questions));
       }
     })
   }
