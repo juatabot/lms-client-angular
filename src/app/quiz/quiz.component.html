@@ -9,15 +9,20 @@
                         <app-multiple-choice-question [question]="question" [(answer)]="answer"
                             *ngSwitchCase="'MULTIPLE_CHOICE'">
                         </app-multiple-choice-question>
-                        <app-true-false-question [question]="question" [(answer)]="answer"
-                            *ngSwitchCase="'TRUE_FALSE'">
+                        <app-true-false-question [question]="question" [(answer)]="answer" *ngSwitchCase="'TRUE_FALSE'">
                         </app-true-false-question>
                     </div>
                 </li>
             </ul>
-            <button class="btn btn-primary" (click)="submitQuiz()">
-                Submit Quiz
-            </button>
+            <li class="list-group-item">
+                <button class="btn btn-primary" (click)="submitQuiz()">
+                    Submit Quiz
+                </button>
+                Previous Attempts:
+                <div *ngFor="let attempt of attempts">
+                    {{attempt.score}}
+                </div>
+            </li>
         </div>
     </div>
 </div>

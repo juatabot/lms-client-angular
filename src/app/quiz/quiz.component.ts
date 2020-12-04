@@ -11,6 +11,7 @@ export class QuizComponent implements OnInit {
 
   quizId = '';
   questions = '';
+  attempts = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -26,7 +27,7 @@ export class QuizComponent implements OnInit {
         'content-type': 'application/json'
       }
     }).then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => this.attempts = result);
   }
 
 
@@ -36,6 +37,14 @@ export class QuizComponent implements OnInit {
         this.quizId = params.quizId;
         this.questionService.findAllQuestionsForQuiz(this.quizId)
           .then(questions => this.questions = questions);
+        fetch(`http://localhost:3000/api/quizzes/${this.quizId}/attempts`, {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json'
+          }
+        })
+          .then(response => response.json())
+          .then(attempts => this.attempts = attempts);
       }
     })
   }

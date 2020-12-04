@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class MultipleChoiceQuestionComponent implements OnInit {
 
   @Input()
-  question = { _id: '', title: '', question: '', options: [], answer: '', correct: '' }
+  question = { _id: '', title: '', question: '', choices: [], answer: '', correct: '' }
   @Input()
   answer;
 
